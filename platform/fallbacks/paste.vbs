@@ -49,4 +49,8 @@ Dim objHTML
 Set objHTML = CreateObject("htmlfile")
 text = objHTML.ParentWindow.ClipboardData.GetData("Text")
 
-Wscript.Echo Base64Encode(text)
+If IsNull(text) = true Then 
+  Wscript.Quit
+Else
+  Wscript.Echo Base64Encode(text)
+End If
